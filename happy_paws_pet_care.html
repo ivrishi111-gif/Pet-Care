@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws - Pet Care</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Fredoka for friendly headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fffaf4',
+                            100: '#fff0df',
+                            200: '#ffdec0',
+                            500: '#ff914d',
+                            600: '#e8752d',
+                            700: '#c75b19',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-brand-500/95 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center gap-4">
+            <a href="#home" class="flex items-center gap-2 text-white font-display text-2xl sm:text-3xl font-bold tracking-tight hover:opacity-90 transition">
+                <span>🐾</span>
+                <span>Happy Paws</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden text-white p-2 rounded-xl hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-white">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row w-full md:w-auto items-center gap-2 md:gap-6 pt-2 md:pt-0">
+                <a href="#home" class="w-full md:w-auto text-center py-2 px-3 rounded-xl text-white font-semibold hover:bg-brand-600 md:hover:bg-transparent md:hover:text-slate-900 transition">Home</a>
+                <a href="#services" class="w-full md:w-auto text-center py-2 px-3 rounded-xl text-white font-semibold hover:bg-brand-600 md:hover:bg-transparent md:hover:text-slate-900 transition">Services</a>
+                <a href="#tips" class="w-full md:w-auto text-center py-2 px-3 rounded-xl text-white font-semibold hover:bg-brand-600 md:hover:bg-transparent md:hover:text-slate-900 transition">Tips</a>
+                <a href="#team" class="w-full md:w-auto text-center py-2 px-3 rounded-xl text-white font-semibold hover:bg-brand-600 md:hover:bg-transparent md:hover:text-slate-900 transition">Our Team</a>
+                <a href="#contact" class="w-full md:w-auto text-center py-2 px-3 rounded-xl text-white font-semibold hover:bg-brand-600 md:hover:bg-transparent md:hover:text-slate-900 transition">Contact</a>
+                <a href="#appointment" class="w-full md:w-auto text-center bg-white text-brand-600 hover:bg-brand-100 font-bold py-2.5 px-5 rounded-full shadow-sm transition transform hover:-translate-y-0.5">Book Visit</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[500px] lg:min-h-[580px] flex items-center justify-center text-center text-white px-4 py-20 bg-slate-900 overflow-hidden">
+        <!-- Background Image with Fallback -->
+        <img 
+            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1400" 
+            onerror="this.onerror=null; this.src='https://placehold.co/1400x700/e8752d/ffffff?text=Happy+Paws+Pet+Care';"
+            alt="Happy dog and cat together" 
+            class="absolute inset-0 w-full h-full object-cover opacity-55"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/35 to-slate-900/40"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="inline-block bg-brand-500/90 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4 shadow">
+                Trusted Veterinary & Grooming Center
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-tight drop-shadow">
+                Love Your Pets, Care For Them!
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Professional care, gentle grooming, and endless happiness for your furry best friends.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#appointment" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 text-lg">
+                    Book an Appointment
+                </a>
+                <a href="#services" class="w-full sm:w-auto bg-white/15 hover:bg-white/25 backdrop-blur-sm border border-white/40 text-white font-semibold px-8 py-4 rounded-full transition text-lg">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-600 mb-3">Our Pet Care Services</h2>
+            <p class="text-slate-600 text-lg">Everything your lovely pets need to stay healthy, clean, and joyful in one place.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service Card 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Pet+Grooming';"
+                     alt="Pet grooming" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Pet Grooming</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">Gentle bathing, coat trimming, nail clipping, and ear cleaning to keep your pets fresh and healthy.</p>
+                <button onclick="selectServiceAndScroll('Pet Grooming')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Schedule Grooming</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Veterinary+Care';"
+                     alt="Veterinary care" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Veterinary Care</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">Comprehensive health checkups, timely vaccinations, dental care, and preventive medicine for your pets.</p>
+                <button onclick="selectServiceAndScroll('Veterinary Care')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Schedule Checkup</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Pet+Training';"
+                     alt="Dog training" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Pet Training</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">Positive reinforcement training sessions to build good habits, obedience, and social confidence.</p>
+                <button onclick="selectServiceAndScroll('Pet Training')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Schedule Training</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Pet+Walking';"
+                     alt="Pet walking" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Pet Walking</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">Daily outdoor walks and playful exercise routines tailored to your pet's energy level.</p>
+                <button onclick="selectServiceAndScroll('Pet Walking')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Schedule Walk</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Healthy+Nutrition';"
+                     alt="Pet food" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Healthy Nutrition</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">Personalized diet plans and nutritious food recommendations to support lifelong vitality.</p>
+                <button onclick="selectServiceAndScroll('Healthy Food Consultation')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Consult Dietitian</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-brand-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x300/ff914d/ffffff?text=Pet+Boarding';"
+                     alt="Pet boarding" class="w-full h-48 object-cover rounded-xl mb-5">
+                <h3 class="font-display text-xl font-bold text-brand-500 mb-2">Pet Boarding</h3>
+                <p class="text-slate-600 leading-relaxed flex-grow">A cozy, supervised home-away-from-home where your pets are pampered while you travel.</p>
+                <button onclick="selectServiceAndScroll('Pet Boarding')" class="mt-5 text-left text-brand-600 font-semibold hover:text-brand-700 inline-flex items-center gap-1 group">
+                    <span>Reserve Boarding</span>
+                    <span class="transition-transform group-hover:translate-x-1">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Care Tips Section -->
+    <section id="tips" class="bg-brand-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-600 mb-3">Pet Care Tips 🐶</h2>
+                <p class="text-slate-700 text-lg">Simple daily habits to keep your companions happy and thriving.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">💧</span>
+                    <p class="text-slate-700 font-medium">Provide fresh and clean drinking water every day.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">🥣</span>
+                    <p class="text-slate-700 font-medium">Give your pets nutritious and balanced meals.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">🩺</span>
+                    <p class="text-slate-700 font-medium">Schedule regular veterinary health checkups.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">🛏️</span>
+                    <p class="text-slate-700 font-medium">Keep their sleeping and living area clean and cozy.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">🎾</span>
+                    <p class="text-slate-700 font-medium">Ensure daily exercise and interactive playtime.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-3">
+                    <span class="text-2xl">❤️</span>
+                    <p class="text-slate-700 font-medium">Show them plenty of love, patience, and affection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Experts Section -->
+    <section id="team" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-600 mb-3">Meet Our Experts</h2>
+            <p class="text-slate-600 text-lg">Experienced, compassionate professionals dedicated to your pet's well-being.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Expert 1 -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-brand-100 text-center transition hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/ff914d/ffffff?text=Dr.+Priya+Sharma';"
+                     alt="Dr. Priya Sharma" class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-brand-200 mb-5 shadow">
+                <h3 class="font-display text-2xl font-bold text-slate-800">Dr. Priya Sharma</h3>
+                <span class="inline-block bg-brand-100 text-brand-700 font-semibold text-sm px-3 py-1 rounded-full mt-1 mb-3">Chief Veterinarian</span>
+                <p class="text-slate-600 mb-3">Specialist in preventive pet medicine, vaccinations, and compassionate animal care.</p>
+                <p class="text-sm font-semibold text-slate-500">Experience: 8+ Years</p>
+            </div>
+
+            <!-- Expert 2 -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-brand-100 text-center transition hover:shadow-xl">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/ff914d/ffffff?text=Rahul+Kumar';"
+                     alt="Rahul Kumar" class="w-40 h-40 mx-auto object-cover rounded-full border-4 border-brand-200 mb-5 shadow">
+                <h3 class="font-display text-2xl font-bold text-slate-800">Rahul Kumar</h3>
+                <span class="inline-block bg-brand-100 text-brand-700 font-semibold text-sm px-3 py-1 rounded-full mt-1 mb-3">Lead Pet Trainer</span>
+                <p class="text-slate-600 mb-3">Certified behavioral specialist focusing on positive obedience training and puppy socialization.</p>
+                <p class="text-sm font-semibold text-slate-500">Experience: 5+ Years</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section id="appointment" class="bg-brand-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-600 mb-3">Book an Appointment 📅</h2>
+                <p class="text-slate-700 text-lg">Schedule a personalized visit for your lovely pet.</p>
+            </div>
+
+            <form id="booking-form" class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="owner-name" class="block text-sm font-semibold text-slate-700 mb-1">Your Name</label>
+                        <input type="text" id="owner-name" placeholder="e.g., Ananya Rao" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="pet-name" class="block text-sm font-semibold text-slate-700 mb-1">Pet's Name</label>
+                        <input type="text" id="pet-name" placeholder="e.g., Bruno" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="owner-email" class="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+                        <input type="email" id="owner-email" placeholder="you@example.com" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                    </div>
+                    <div>
+                        <label for="owner-phone" class="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+                        <input type="tel" id="owner-phone" placeholder="+91 98765 43210" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="service-select" class="block text-sm font-semibold text-slate-700 mb-1">Select Service</label>
+                        <select id="service-select" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                            <option value="">Choose a service...</option>
+                            <option value="Pet Grooming">Pet Grooming</option>
+                            <option value="Veterinary Care">Veterinary Care</option>
+                            <option value="Pet Training">Pet Training</option>
+                            <option value="Pet Walking">Pet Walking</option>
+                            <option value="Healthy Food Consultation">Healthy Food Consultation</option>
+                            <option value="Pet Boarding">Pet Boarding</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="appointment-date" class="block text-sm font-semibold text-slate-700 mb-1">Preferred Date</label>
+                        <input type="date" id="appointment-date" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="notes" class="block text-sm font-semibold text-slate-700 mb-1">Additional Message (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="Tell us about your pet's breed, age, or special needs..."
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 text-lg">
+                    Confirm Appointment
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-600 mb-3">Contact Us 📞</h2>
+        <p class="text-slate-600 text-lg mb-10">Have questions? Reach out to our friendly team anytime!</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-100">
+                <div class="text-3xl mb-2">📍</div>
+                <h3 class="font-bold text-slate-800 mb-1">Location</h3>
+                <p class="text-slate-600 text-sm">Main Road, Hyderabad, India</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-100">
+                <div class="text-3xl mb-2">📞</div>
+                <h3 class="font-bold text-slate-800 mb-1">Phone</h3>
+                <p class="text-slate-600 text-sm">+91 98765 43210</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-100">
+                <div class="text-3xl mb-2">📧</div>
+                <h3 class="font-bold text-slate-800 mb-1">Email</h3>
+                <p class="text-slate-600 text-sm">happypaws@gmail.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-100">
+                <div class="text-3xl mb-2">🕒</div>
+                <h3 class="font-bold text-slate-800 mb-1">Working Hours</h3>
+                <p class="text-slate-600 text-sm">Mon – Sat: 9 AM – 6 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-8 px-4 text-center">
+        <p class="font-semibold text-white mb-1">© 2026 Happy Paws Pet Care. All Rights Reserved.</p>
+        <p class="text-sm text-slate-400">Made with ❤️ for our furry friends.</p>
+    </footer>
+
+    <!-- Custom Confirmation Modal (Replaces alert()) -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl transform transition-all">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                🐾
+            </div>
+            <h3 class="font-display text-2xl font-bold text-slate-800 mb-2">Appointment Confirmed!</h3>
+            <p id="modal-summary" class="text-slate-600 mb-6 leading-relaxed"></p>
+            <button id="close-modal-btn" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-6 rounded-full transition">
+                Awesome, Thank You!
+            </button>
+        </div>
+    </div>
+
+    <!-- Interactive Logic -->
+    <script>
+        // Set minimum selectable date for appointment to today
+        const dateInput = document.getElementById('appointment-date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Mobile navigation toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    navMenu.classList.add('hidden');
+                    navMenu.classList.remove('flex');
+                }
+            });
+        });
+
+        // Pre-select service from service cards and scroll smoothly to form
+        function selectServiceAndScroll(serviceName) {
+            const serviceSelect = document.getElementById('service-select');
+            serviceSelect.value = serviceName;
+            document.getElementById('appointment').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Custom modal handling for appointment booking
+        const bookingForm = document.getElementById('booking-form');
+        const modal = document.getElementById('confirmation-modal');
+        const modalSummary = document.getElementById('modal-summary');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const ownerName = document.getElementById('owner-name').value.trim();
+            const petName = document.getElementById('pet-name').value.trim();
+            const service = document.getElementById('service-select').value;
+            const date = document.getElementById('appointment-date').value;
+
+            modalSummary.innerHTML = `Thank you, <strong class="text-slate-800">${ownerName}</strong>! We have scheduled <strong class="text-brand-600">${service}</strong> for <strong class="text-slate-800">${petName}</strong> on <strong class="text-slate-800">${date}</strong>. We look forward to seeing you!`;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            bookingForm.reset();
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Close modal when clicking outside the dialog card
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+</html>
